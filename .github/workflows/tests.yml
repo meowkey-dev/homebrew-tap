@@ -1,6 +1,7 @@
 name: tests
 
-# Install and smoke-test the formula whenever it changes, on macOS and Linux.
+# Install and smoke-test the formula as users get it — tapped from GitHub, not
+# from the checkout — so what is tested is exactly what is published.
 on:
   push:
     branches: [main]
@@ -17,15 +18,10 @@ jobs:
         os: [macos-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-          fetch-depth: 0
+      - uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c
 
-      - uses: Homebrew/actions/setup-homebrew@master
-
-      - name: Tap this checkout
-        run: brew tap meowkey-dev/tap "$PWD"
+      - name: Tap
+        run: brew tap meowkey-dev/tap
 
       - name: Install
         run: brew install meowkey-dev/tap/analog
