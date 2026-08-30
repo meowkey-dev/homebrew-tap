@@ -1,0 +1,30 @@
+name: tests
+
+# Install and smoke-test the formula whenever it changes, on macOS and Linux.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Install
+        run: brew install ./Formula/analog.rb
+
+      - name: Test
+        run: brew test ./Formula/analog.rb
