@@ -20,11 +20,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          fetch-depth: 0
 
       - uses: Homebrew/actions/setup-homebrew@master
 
+      - name: Tap this checkout
+        run: brew tap meowkey-dev/tap "$PWD"
+
       - name: Install
-        run: brew install ./Formula/analog.rb
+        run: brew install meowkey-dev/tap/analog
 
       - name: Test
-        run: brew test ./Formula/analog.rb
+        run: brew test meowkey-dev/tap/analog
