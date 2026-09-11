@@ -2,7 +2,7 @@ class Analog < Formula
   desc "A shared canvas for one human and their agents"
   homepage "https://github.com/meowkey-dev/analog"
   license "Apache-2.0"
-  version "0.15.0"
+  version "0.16.0"
 
   livecheck do
     url "https://github.com/meowkey-dev/analog/releases"
@@ -13,22 +13,22 @@ class Analog < Formula
   # at the right archive directly instead of building from source.
   on_macos do
     on_arm do
-      url "https://github.com/meowkey-dev/analog/releases/download/v0.15.0/analog-darwin-arm64.tar.gz"
-      sha256 "6a450941d66773c5c71ff110e7ec17c0c753f7a91898b9d7c12de9715c5f615a"
+      url "https://github.com/meowkey-dev/analog/releases/download/v0.16.0/analog-darwin-arm64.tar.gz"
+      sha256 "ae4587c9708ffeddd7e19c35d4c933cc3f05bab7d625725ad50eefab50774ee3"
     end
     on_intel do
-      url "https://github.com/meowkey-dev/analog/releases/download/v0.15.0/analog-darwin-amd64.tar.gz"
-      sha256 "d8057fdac10b76c031b531fd351f9bad4253d5ff05c6e7e874df36b170243565"
+      url "https://github.com/meowkey-dev/analog/releases/download/v0.16.0/analog-darwin-amd64.tar.gz"
+      sha256 "1f32217ea4f298d86fe5112cee54e1352ddd863038cecc1dca4aa3d65c247bba"
     end
   end
   on_linux do
     on_arm do
-      url "https://github.com/meowkey-dev/analog/releases/download/v0.15.0/analog-linux-arm64.tar.gz"
-      sha256 "dd157ae027e6885200f0b91e2c526bfeb8a3fafa0d6633be899900637ea080e4"
+      url "https://github.com/meowkey-dev/analog/releases/download/v0.16.0/analog-linux-arm64.tar.gz"
+      sha256 "bfa5e0a07838a562843a1e7bf208a773cbf9c62793b7f88be1ac774aaeec6323"
     end
     on_intel do
-      url "https://github.com/meowkey-dev/analog/releases/download/v0.15.0/analog-linux-amd64.tar.gz"
-      sha256 "7c5fb88da8d6825b808fa5293f04f80aded1ad2a53fb403faa50846c6f9bc6a9"
+      url "https://github.com/meowkey-dev/analog/releases/download/v0.16.0/analog-linux-amd64.tar.gz"
+      sha256 "2fcb8d98700b9e91047e66705d77098a408f3ad4e6c2d8977bcc29d81cffdb57"
     end
   end
 
